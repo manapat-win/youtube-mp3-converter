@@ -1,5 +1,3 @@
-ssh -R 80:127.0.0.1:5000 nokey@localhost.run
-
 git add . เอาไว้เลือกไฟล์ที่เราเพิ่งเเก้ไขทั้งหมด
 git commit -m "test ver1" บันทึก(commit) พร้อมข้อความอธิบาย
 git log --oneline เช็คว่า commit รึยัง
