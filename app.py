@@ -81,11 +81,17 @@ def convert():
         'format': 'bestaudio/best',
         'outtmpl': f'{DOWNLOAD_FOLDER}/{track_num}_%(title)s.%(ext)s',
         'cookiefile': 'www.youtube.com_cookies.txt',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
+        'postprocessors': [
+            {
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            },
+            # 🌟 เพิ่มคำสั่งบรรทัดนี้: บังคับฝังข้อมูล Metadata ลงในไฟล์เสียง
+            {'key': 'FFmpegMetadata', 'add_metadata': True},
+        ],
+        # 🌟 เพิ่มคำสั่งบรรทัดนี้: บังคับให้ตัวแปร track_num ฝังลงไปในช่อง Track Number ของ ID3 Tag
+        'parse_metadata': f':%(track_number)s',
         'noplaylist': True
     }
 
