@@ -49,7 +49,7 @@ HTML_PAGE = """
             setTimeout(() => {
                 btn.innerText = 'แปลงเป็น MP3 และดาวน์โหลด';
                 btn.disabled = false;
-            }, 120000);
+            }, 10000);
             return true;
         }
     </script>
